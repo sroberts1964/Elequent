@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Likeable;
 
 class Post extends Model
 {
-    use HasFactory;
+    use HasFactory, Likeable;
 
     public function comment()
     {
@@ -18,4 +19,5 @@ class Post extends Model
     {
         return $this->belongsToMany(Tag::class)->withTimestamps();
     }
+
 }
